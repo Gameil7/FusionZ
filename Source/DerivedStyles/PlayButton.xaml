@@ -1,9 +1,9 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style x:Key="PlayButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
-        <Setter Property="Background" Value="{DynamicResource GlyphBrush}" />
-        <Setter Property="Foreground" Value="{DynamicResource PlayButtonTextBrush}" />
+        <Setter Property="Background" Value="{DynamicResource AccentIdleBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource SelectedBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource PanelSeparatorBrush}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Padding" Value="24,0,24,0" />
@@ -11,14 +11,14 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Grid x:Name="Grid">
-                        <Border x:Name="DefaultBorder" 
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"  
-                                Background="{TemplateBinding Background}"
-                                Opacity="1" CornerRadius="24"/>
+                        <Border x:Name="DefaultBorder"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}"
+                            Opacity="1" CornerRadius="24" />
                         <StackPanel Orientation="Horizontal" Margin="{TemplateBinding Padding}"
-                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
                             <ContentPresenter RecognizesAccessKey="True" />
                         </StackPanel>
                     </Grid>
@@ -33,15 +33,15 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Foreground" Value="{DynamicResource PlayButtonTextBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource SelectedBrush}" />
                 <Setter Property="Background" Value="{DynamicResource AccentHoverBrush}" />
             </Trigger>
         </Style.Triggers>
     </Style>
 
     <Style x:Key="IconPlayButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
-        <Setter Property="Background" Value="{DynamicResource GlyphBrush}" />
-        <Setter Property="Foreground" Value="{DynamicResource PlayButtonTextBrush}" />
+        <Setter Property="Background" Value="{DynamicResource PlayButtonBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource SelectedBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource PanelSeparatorBrush}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Padding" Value="24,0,24,0" />
@@ -50,19 +50,27 @@
                 <ControlTemplate TargetType="{x:Type Button}">
 
                     <Grid x:Name="Grid">
-                        <!--<Border BorderBrush="{DynamicResource GlyphBrush}" BorderThickness="1" CornerRadius="24" Opacity="0.4" />-->
-                        <Border x:Name="DefaultBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
-                                Background="{TemplateBinding Background}" Opacity="1" CornerRadius="24" />
-                        <Border x:Name="HoverBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
-                                Background="{DynamicResource GlyphBrush}" Opacity="0" CornerRadius="24" >
+                        <!--<Border
+                        BorderBrush="{DynamicResource GlyphBrush}" BorderThickness="1"
+                        CornerRadius="24" Opacity="0.4" />-->
+                        <Border x:Name="DefaultBorder" BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}" Opacity="1" CornerRadius="24" />
+                        <Border x:Name="HoverBorder" BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{DynamicResource PlayButtonHoverBackgroundBrush}"
+                            Opacity="0" CornerRadius="24">
                             <Border.Effect>
                                 <BlurEffect Radius="20" KernelType="Gaussian" />
                             </Border.Effect>
                         </Border>
-                        <StackPanel Orientation="Horizontal" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
-                            <TextBlock Text="&#xee4a;" FontSize="{DynamicResource FontSizeLarge}" Margin="0,0,8,0" Foreground="{TemplateBinding Foreground}" Style="{DynamicResource IconFontStyle}" />
-                            <ContentPresenter RecognizesAccessKey="True" Margin="0,0,16,0"/>
+                        <StackPanel Orientation="Horizontal" Margin="{TemplateBinding Padding}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+                            <TextBlock Text="&#xee4a;" FontSize="{DynamicResource FontSizeLarge}"
+                                Margin="0,0,8,0" Foreground="{TemplateBinding Foreground}"
+                                Style="{DynamicResource IconFontStyle}" />
+                            <ContentPresenter RecognizesAccessKey="True" Margin="0,0,16,0" />
                         </StackPanel>
                     </Grid>
                     <ControlTemplate.Triggers>
@@ -74,7 +82,9 @@
                             <Trigger.EnterActions>
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.3">
+                                        <DoubleAnimation Storyboard.TargetName="HoverBorder"
+                                            Storyboard.TargetProperty="Opacity" To="1"
+                                            Duration="0:0:0.3">
                                             <DoubleAnimation.EasingFunction>
                                                 <QuadraticEase EasingMode="EaseInOut" />
                                             </DoubleAnimation.EasingFunction>
@@ -85,7 +95,9 @@
                             <Trigger.ExitActions>
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.3">
+                                        <DoubleAnimation Storyboard.TargetName="HoverBorder"
+                                            Storyboard.TargetProperty="Opacity" To="0"
+                                            Duration="0:0:0.3">
                                             <DoubleAnimation.EasingFunction>
                                                 <QuadraticEase EasingMode="EaseInOut" />
                                             </DoubleAnimation.EasingFunction>
@@ -105,7 +117,8 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="ContextActionButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
+    <Style x:Key="ContextActionButton" TargetType="{x:Type Button}"
+        BasedOn="{StaticResource BaseStyle}">
         <Setter Property="Background" Value="{DynamicResource GlyphBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource IdleBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource PanelSeparatorBrush}" />
@@ -116,11 +129,16 @@
                 <ControlTemplate TargetType="{x:Type Button}">
 
                     <Grid x:Name="Grid">
-                        <!--<Border BorderBrush="{DynamicResource GlyphBrush}" BorderThickness="1" CornerRadius="24" Opacity="0.4" />-->
-                        <Border x:Name="DefaultBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
-                                Background="{TemplateBinding Background}" Opacity="0.24" CornerRadius="24" />
-                        <StackPanel Orientation="Horizontal" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+                        <!--<Border
+                        BorderBrush="{DynamicResource GlyphBrush}" BorderThickness="1"
+                        CornerRadius="24" Opacity="0.4" />-->
+                        <Border x:Name="DefaultBorder" BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}" Opacity="0.24"
+                            CornerRadius="24" />
+                        <StackPanel Orientation="Horizontal" Margin="{TemplateBinding Padding}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
                             <ContentPresenter RecognizesAccessKey="True" Margin="0,0,0,0" />
                         </StackPanel>
                     </Grid>
@@ -133,7 +151,9 @@
                             <Trigger.EnterActions>
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="DefaultBorder" Storyboard.TargetProperty="Opacity" To="0.4" Duration="0:0:0.3">
+                                        <DoubleAnimation Storyboard.TargetName="DefaultBorder"
+                                            Storyboard.TargetProperty="Opacity" To="0.4"
+                                            Duration="0:0:0.3">
                                             <DoubleAnimation.EasingFunction>
                                                 <QuadraticEase EasingMode="EaseInOut" />
                                             </DoubleAnimation.EasingFunction>
@@ -144,7 +164,9 @@
                             <Trigger.ExitActions>
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="DefaultBorder" Storyboard.TargetProperty="Opacity" To="0.24" Duration="0:0:0.3">
+                                        <DoubleAnimation Storyboard.TargetName="DefaultBorder"
+                                            Storyboard.TargetProperty="Opacity" To="0.24"
+                                            Duration="0:0:0.3">
                                             <DoubleAnimation.EasingFunction>
                                                 <QuadraticEase EasingMode="EaseInOut" />
                                             </DoubleAnimation.EasingFunction>

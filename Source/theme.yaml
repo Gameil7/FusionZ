@@ -1,16 +1,12 @@
-ThemeApiVersion: 2.8.0
-Id: FusionX_54244ec8-29ec-418e-bce7-415250c8d67b
-Name: FusionX
-Author: sakasaki
-Version: 2.0.9
+ThemeApiVersion: 2.9.0
+Id: FusionZ_1e05f9eb-8760-41dc-ad68-58ca379961b0
+Name: FusionZ
+Author: Gameil
+Version: 2.5.1
 Links:
-- Name: GitHub 111
-  Url: https://github.com/sakasakiking/FusionX
+- Name: GitHub
+  Url: https://github.com/Gameil7/FusionZ
 - Name: Recommended Settings For v2.0.0+
   Url: https://github.com/sakasakiking/FusionX/wiki/Recommended-Settings-For-v2.0.0
 - Name: Issues Tracker
-  Url: https://github.com/sakasakiking/FusionX/issues
-- Name: Support (Discord)
-  Url: https://discord.com/channels/365863063296933888/808419347105447957
-- Name: Ko-fi (Tips and Donations)
-  Url: https://ko-fi.com/sakasaki30
+  Url: https://github.com/Gameil7/FusionX2/issues

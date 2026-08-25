@@ -16,6 +16,7 @@ Constants:
     - ShowUserRatingStar: 'Show User rating star under game name'
     - ImageBackgroundDarkenMask(0,1): 'Darken the background'
     - ShowIconTextOnLink: 'Show full link name next to the icon'
+    - HideTitleIfLogoAvailable: 'Hide Game Title if Logo is Available'
   
     - "Details View ------------------------"
     - DetailViewDetailInfoColumn(400,760): 'Width of detail information Column'
