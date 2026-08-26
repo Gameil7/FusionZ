@@ -2,17 +2,21 @@
 
 # FusionZ
 
-A beautiful and consistent designed Theme for [Playnite](https://github.com/JosefNemec/Playnite) Desktop Mode fork of [FusionX](https://github.com/sakasakiking/FusionX).
+Fork of [FusionX](https://github.com/sakasakiking/FusionX).
+
+A beautiful and consistent designed Theme for [Playnite](https://github.com/JosefNemec/Playnite) Desktop Mode.
 
 ## Main Changes
 
-- Option to Hide Title if Logo is available in Theme modifier(EML required).
-- Hide Header elements(logo, ratings, genres, links) when alternative video is playing in background.
-- Can Play/Pause the video by clicking empty area in the Header.
+- Play Button Color Change.
+
+ These changes only work in Gridview (for now).
+- Option to Hide Title if Logo is available in Theme modifier(EML required). 
+- Hide Header elements(logo, ratings, genres, links) when alternative video is playing in background. 
+- Can Play/Pause the video by clicking empty area in the Header. 
 - Can quick access EML settings/option by right clicking any empty area in Header.
 - Genres will now wrap around to next line instead of overflowing.
 - Features Icons repositioned.
-- Play Button Color Change.
 
 ## Preparation and Settings
 
