@@ -45,7 +45,7 @@ A beautiful and consistent designed Theme for [Playnite](https://github.com/Jose
 
 ## Installation
 
-- **A**: Download the latest packaged `pthm` theme file from the [Releases page](https://github.com/Gameil7/FusionZ/releases/tag/Latest) and open it.
+- **A**: Download the latest packaged `pthm` theme file from the [Releases page](https://github.com/Gameil7/FusionZ/releases/latest) and open it.
 
 ## Extensions Support
 
