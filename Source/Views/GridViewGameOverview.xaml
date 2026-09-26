@@ -2551,12 +2551,39 @@
                                                         <TextBlock Text="&#xe129;" FontSize="20"
                                                             DockPanel.Dock="Left" Margin="0,0,8,0"
                                                             Style="{DynamicResource IconFontStyle}" />
-                                                        <Label Name="PART_ElemCompletionStatus"
-                                                            Content="{DynamicResource LOCCompletionStatus}"
-                                                            DockPanel.Dock="Top" />
-                                                        <Button Name="PART_ButtonCompletionStatus"
-                                                            DockPanel.Dock="Top" FontWeight="Bold" />
+                                                        <StackPanel DockPanel.Dock="Top">
+
+                                                            <Label
+                                                                Name="PART_ElemCompletionStatus"
+                                                                Content="{DynamicResource LOCCompletionStatus}" />
+
+                                                            <ContentControl
+                                                                x:Name="ThemeExtras_SettableCompletionStatus"
+                                                                Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}">
+
+                                                                <ContentControl.Resources>
+                                                                    <Style
+                                                                        TargetType="UserControl"
+                                                                        BasedOn="{StaticResource ThemeExtrasUserControlCompStatusStyle}" />
+                                                                </ContentControl.Resources>
+
+                                                            </ContentControl>
+
+                                                            <Border
+                                                                Tag="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}"
+                                                                Visibility="{Binding RelativeSource={RelativeSource Self},Path=Tag,
+                                                                            Converter={StaticResource InvertedBooleanToVisibilityConverter}}">
+
+                                                                <Button
+                                                                    Name="PART_ButtonCompletionStatus"
+                                                                    FontWeight="Bold" />
+
+                                                            </Border>
+
+                                                        </StackPanel>
                                                     </DockPanel>
+
+
                                                     <DockPanel
                                                         Visibility="{PluginSettings Plugin=PlayniteAchievements, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}"
                                                         Margin="0,0,16,0">
