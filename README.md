@@ -10,13 +10,15 @@ A beautiful and consistent designed Theme for [Playnite](https://github.com/Jose
 
 - Play Button Color Change.
 
- These changes only work in Gridview (for now).
-- Option to Hide Title if Logo is available in Theme modifier(EML required). 
-- Hide Header elements(logo, ratings, genres, links) when alternative video is playing in background. 
-- Can Play/Pause the video by clicking empty area in the Header. 
+These changes only work in Gridview (for now).
+
+- Option to Hide Title if Logo is available in Theme modifier(EML required).
+- Hide Header elements(logo, ratings, genres, links) when alternative video is playing in background.
+- Can Play/Pause the video by clicking empty area in the Header.
 - Can quick access EML settings/option by right clicking any empty area in Header.
 - Genres will now wrap around to next line instead of overflowing.
 - Features Icons repositioned.
+- Can click Completion Status to change it.
 
 ## Preparation and Settings
 

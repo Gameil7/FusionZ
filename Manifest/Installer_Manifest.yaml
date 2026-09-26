@@ -252,3 +252,21 @@ Packages:
     PackageUrl: https://github.com/sakasakiking/FusionX/releases/download/Latest/FusionX_54244ec8-29ec-418e-bce7-415250c8d67b_2_1_1.pthm
     Changelog:  
     - Fix a tiny issue that the fade-out effect around the game video in Grid View did not take effect.
+  - Version: 2.5.1
+    RequiredApiVersion: 2.9.0
+    ReleaseDate: 2026-08-26
+    PackageUrl: https://github.com/Gameil7/FusionZ/releases/download/v2.5.1/FusionZ_1e05f9eb-8760-41dc-ad68-58ca379961b0_2_5_1.pthm
+    Changelog:  
+    - Option to Hide Title if Logo is available in Theme modifier.
+    - Hide Header elements(logo, ratings, genres, links) when alternative video is playing in background. Only works in GridView for now.
+    - Can Play/Pause the video by clicking empty area in the Header.
+    - Can quick access EML settings/option by right clicking any empty area in Header.
+    - Genres will now wrap around to next line instead of overflowing.
+    - Feature Icons re-positioned.
+    - Play Button Color Change.
+  - Version: 2.6.1
+    RequiredApiVersion: 2.10.0
+    ReleaseDate: 2026-09-27
+    PackageUrl: https://github.com/Gameil7/FusionZ/releases/download/v2.6.1/FusionZ_1e05f9eb-8760-41dc-ad68-58ca379961b0_2_6_1.pthm
+    Changelog: 
+    - Can now click Completion Status change to it.
